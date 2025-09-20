@@ -10,7 +10,7 @@ import MessagingSystem from "@/components/messaging-system";
 import UserProfileSystem from "@/components/user-profile-system";
 import AdminDashboard from "@/components/admin-dashboard";
 
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { Tabs, TabsContent } from "@/components/ui/tabs";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 
 type SectionKey =
@@ -162,17 +162,6 @@ export default function Page() {
       <main className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
         <div className="mb-4">
           <Tabs value={activeSection} onValueChange={(v) => setActiveSection(v as SectionKey)} className="w-full">
-            <TabsList className="flex w-full flex-wrap gap-2 bg-muted/60 p-1">
-              <TabsTrigger value="home" className="rounded-full">Home</TabsTrigger>
-              <TabsTrigger value="search" className="rounded-full">Search</TabsTrigger>
-              <TabsTrigger value="social" className="rounded-full">Social</TabsTrigger>
-              <TabsTrigger value="marketplace" className="rounded-full">Marketplace</TabsTrigger>
-              <TabsTrigger value="bookings" className="rounded-full" disabled={!isAuthenticated}>Bookings</TabsTrigger>
-              <TabsTrigger value="messages" className="rounded-full" disabled={!isAuthenticated}>Messages</TabsTrigger>
-              <TabsTrigger value="profile" className="rounded-full" disabled={!isAuthenticated}>Profile</TabsTrigger>
-              <TabsTrigger value="admin" className="rounded-full" disabled={!isAuthenticated}>Admin</TabsTrigger>
-            </TabsList>
-
             <TabsContent value="home" className="mt-6">
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                 <div className="lg:col-span-2 space-y-6">
